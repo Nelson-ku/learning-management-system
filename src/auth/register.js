@@ -11,6 +11,8 @@ const RegisterPage = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    //this is for appi calls to send data
+    
 
     // Add your registration logic here (e.g., API call to create a new account)
 
@@ -39,6 +41,7 @@ const RegisterPage = () => {
               </Grid>
             )}
             <Grid item>
+
               <form onSubmit={handleRegister} style={{ width: '100%' }}>
                 <TextField
                   label="Email"
