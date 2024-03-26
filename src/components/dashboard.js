@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
 import TopBar from './topbar';
-import Dash from './dash';// Import your components for dynamic rendering
+import Courses from './courses';// Import your components for dynamic rendering
 import Analytics from './analytics';
 
 import './style.css';
@@ -17,18 +17,22 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      <TopBar />
-      <div className="content-wrapper">
-        {/* Pass the function to update selected component to the Sidebar */}
-        <Sidebar onItemClick={handleSidebarItemClick} />
-        <div className="main-content">
-          {/* Render the selected component */}
-          {selectedComponent === 'Dash' && <Dash />}
-          {selectedComponent === 'Analytics' && <Analytics />}
-        </div>
-      </div>
-    </div>
+    <div>
+     <TopBar />
+     <div className="dashboard-container"> 
+   <div className="content-wrapper">
+     {/* Pass the function to update selected component to the Sidebar */}
+     <Sidebar onItemClick={handleSidebarItemClick} />
+     <div className="main-content">
+       {/* Render the selected component */}
+       {selectedComponent === 'Courses' && <Courses />}
+       {selectedComponent === 'Analytics' && <Analytics />}
+     </div>
+   </div>
+ </div>
+</div>
+        
+
   );
 };
 

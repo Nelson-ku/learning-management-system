@@ -1,35 +1,51 @@
 // Sidebar.js
 import React from 'react';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Link } from 'react-router-dom'; // If using React Router
+// import { Link } from 'react-router-dom'; // If using React Router
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook, faChartBar, faGraduationCap, faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
+import './style.css';
 
 const Sidebar = ({ onItemClick }) => {
   // Function to handle click events from the sidebar links
-  const handleItemClick = (component) => {
-    onItemClick(component);
-  };
+  // const handleItemClick = (component) => {
+  //   onItemClick(component);
+  // };
 
   return (
-    <List>
-      {/* Example sidebar items */}
-      <ListItem button component={Link} to="/dashboard" onClick={() => handleItemClick('Dashboard')}>
-        <ListItemIcon>{/* Icon Component */}</ListItemIcon>
-        <ListItemText primary="Dashboard" />
-      </ListItem>
-      <ListItem button component={Link} to="/analytics" onClick={() => handleItemClick('Analytics')}>
-        <ListItemIcon>{/* Icon Component */}</ListItemIcon>
-        <ListItemText primary="Analytics" />
-      </ListItem>
-      <ListItem button component={Link} to="/academics" onClick={() => handleItemClick('Academics')}>
-        <ListItemIcon>{/* Icon Component */}</ListItemIcon>
-        <ListItemText primary="Academics" />
-      </ListItem>
-      <ListItem button component={Link} to="/payment-info" onClick={() => handleItemClick('Payment-info')}>
-        <ListItemIcon>{/* Icon Component */}</ListItemIcon>
-        <ListItemText primary="Payment-info" />
-      </ListItem>
-      {/* Add more sidebar items as needed */}
-    </List>
+    <List className='sidebar'>
+  {/* Courses */}
+  <ListItem button onClick={() => onItemClick('Courses')}>
+    <ListItemIcon>
+      <FontAwesomeIcon icon={faBook} />
+    </ListItemIcon>
+    <ListItemText primary="Courses" />
+  </ListItem>
+
+  {/* Analytics */}
+  <ListItem button onClick={() => onItemClick('Analytics')}>
+    <ListItemIcon>
+      <FontAwesomeIcon icon={faChartBar} />
+    </ListItemIcon>
+    <ListItemText primary="Analytics" />
+  </ListItem>
+
+  {/* Academics */}
+  <ListItem button  onClick={() => onItemClick('Academics')}>
+    <ListItemIcon>
+      <FontAwesomeIcon icon={faGraduationCap} />
+    </ListItemIcon>
+    <ListItemText primary="Academics" />
+  </ListItem>
+
+  {/* Payment Info */}
+  <ListItem button onClick={() => onItemClick('Payment-info')}>
+    <ListItemIcon>
+      <FontAwesomeIcon icon={faMoneyCheck} />
+    </ListItemIcon>
+    <ListItemText primary="Payment-info" />
+  </ListItem>
+</List>
   );
 };
 

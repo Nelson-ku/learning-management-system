@@ -12,13 +12,21 @@
 
   .top-bar{
     display:flex;
-    margin-left:10%;
+    margin-left:90%;
+    background-color:#f8f9fa;
+    position: absolute;
   }
+  .top-bar div{
+    padding-left:20px;
+    cursor:pointer;
+  }
+
 
   
   .sidebar{
     width: 250px; /* Adjust width as needed */
-    background-color:red; /* Example background color */
+    background-color:#f8f9fa; /* Example background color */
+    border: 1px solid #fff;
   }
   
   .main-content {

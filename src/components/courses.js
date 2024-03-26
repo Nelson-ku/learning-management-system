@@ -4,7 +4,7 @@ import React from "react";
 
     return(
 
-        <h1>The main component</h1>
+        <h1>The Main component</h1>
 
     );
 
